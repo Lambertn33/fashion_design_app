@@ -27,12 +27,12 @@ class CardWidget extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               width: double.infinity,
               child: SingleChildScrollView(
-                child: Column(children: [
-                  const CardHeader(),
-                  const SizedBox(height: 4,),
-                  const CardBody(),
-                  const SizedBox(height: 4,),
-                  const CardImages(),
+                child: Column(children: const[
+                  CardHeader(),
+                  SizedBox(height: 4,),
+                  CardBody(),
+                  SizedBox(height: 4,),
+                  CardImages(),
                 ]),
               ),
             ),

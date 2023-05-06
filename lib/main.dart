@@ -13,7 +13,8 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin {
+class _MainPageState extends State<MainPage>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
 
   @override
@@ -28,6 +29,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     // TODO: implement dispose
     tabController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,13 +58,35 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
         ),
         body: const CardWidget(),
         bottomNavigationBar: Material(
-          child: TabBar(
-            controller: tabController,
-            tabs: [
-            Tab(icon: Icon(Icons.home, size: 30, color: Constants.mainColor.withOpacity(0.6),),),
-            Tab(icon: Icon(Icons.more, size: 30, color: Constants.mainColor.withOpacity(0.6),),),
-            Tab(icon: Icon(Icons.play_arrow, size: 30, color: Constants.mainColor.withOpacity(0.6),),),
-            Tab(icon: Icon(Icons.navigation, size: 30, color: Constants.mainColor.withOpacity(0.6),),),
+          child: TabBar(controller: tabController, tabs: [
+            Tab(
+              icon: Icon(
+                Icons.home,
+                size: 30,
+                color: Constants.mainColor.withOpacity(0.6),
+              ),
+            ),
+            Tab(
+              icon: Icon(
+                Icons.more,
+                size: 30,
+                color: Constants.mainColor.withOpacity(0.6),
+              ),
+            ),
+            Tab(
+              icon: Icon(
+                Icons.play_arrow,
+                size: 30,
+                color: Constants.mainColor.withOpacity(0.6),
+              ),
+            ),
+            Tab(
+              icon: Icon(
+                Icons.navigation,
+                size: 30,
+                color: Constants.mainColor.withOpacity(0.6),
+              ),
+            ),
           ]),
         ),
       ),

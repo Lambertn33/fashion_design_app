@@ -1,3 +1,4 @@
+import 'package:fashion_design_app/components/card/carddetails.dart';
 import 'package:flutter/material.dart';
 import 'package:fashion_design_app/helpers/constants.dart';
 
@@ -17,14 +18,24 @@ class _CardImagesState extends State<CardImages> {
           children: [
             Expanded(
               flex: 2,
-              child: Container(
-                height: 400,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                        image:
-                            AssetImage('${Constants.imagesPath}/fashion_2.jpg'),
-                        fit: BoxFit.cover)),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => CardDetails(
+                          imageProp: '${Constants.imagesPath}/fashion_1.jpg')));
+                },
+                child: Hero(
+                  tag: '${Constants.imagesPath}/fashion_1.jpg',
+                  child: Container(
+                    height: 400,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                            image: AssetImage(
+                                '${Constants.imagesPath}/fashion_1.jpg'),
+                            fit: BoxFit.cover)),
+                  ),
+                ),
               ),
             ),
             const SizedBox(
@@ -34,26 +45,48 @@ class _CardImagesState extends State<CardImages> {
                 flex: 1,
                 child: Column(
                   children: [
-                    Container(
-                      height: 200,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  '${Constants.imagesPath}/fashion_2.jpg'),
-                              fit: BoxFit.cover)),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => CardDetails(
+                                imageProp:
+                                    '${Constants.imagesPath}/fashion_2.jpg')));
+                      },
+                      child: Hero(
+                        tag: '${Constants.imagesPath}/fashion_2.jpg',
+                        child: Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      '${Constants.imagesPath}/fashion_2.jpg'),
+                                  fit: BoxFit.cover)),
+                        ),
+                      ),
                     ),
                     const SizedBox(
                       height: 6,
                     ),
-                    Container(
-                      height: 200,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  '${Constants.imagesPath}/fashion_3.jpg'),
-                              fit: BoxFit.cover)),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => CardDetails(
+                                imageProp:
+                                    '${Constants.imagesPath}/fashion_3.jpg')));
+                      },
+                      child: Hero(
+                        tag: '${Constants.imagesPath}/fashion_3.jpg',
+                        child: Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      '${Constants.imagesPath}/fashion_3.jpg'),
+                                  fit: BoxFit.cover)),
+                        ),
+                      ),
                     ),
                   ],
                 )),
@@ -71,12 +104,15 @@ class _CardImagesState extends State<CardImages> {
               decoration: BoxDecoration(
                   color: Constants.mainColor,
                   borderRadius: BorderRadius.circular(12)),
-              child: const Text('# Hashtag 1', style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w500
-              ),),
+              child: const Text(
+                '# Hashtag 1',
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+              ),
             ),
-            const SizedBox(width: 4,),
+            const SizedBox(
+              width: 4,
+            ),
             Container(
               alignment: Alignment.center,
               width: 100,
@@ -84,10 +120,11 @@ class _CardImagesState extends State<CardImages> {
               decoration: BoxDecoration(
                   color: Constants.mainColor,
                   borderRadius: BorderRadius.circular(12)),
-              child: const Text('# Hashtag 2', style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w500
-              ),),
+              child: const Text(
+                '# Hashtag 2',
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+              ),
             ),
           ],
         )
