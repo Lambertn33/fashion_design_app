@@ -1,3 +1,4 @@
+import 'package:fashion_design_app/components/cardwidget.dart';
 import 'package:fashion_design_app/components/photoslider.dart';
 import 'package:fashion_design_app/helpers/constants.dart';
 import 'package:flutter/material.dart';
@@ -40,13 +41,7 @@ class _MainPageState extends State<MainPage> {
             )
           ],
         ),
-        body: ListView(
-          children: [Container(
-            height: 200,
-            width: double.infinity,
-            child: const PhotoSlider(),
-          )],
-        )
+        body: const CardWidget()
       ),
     );
   }
