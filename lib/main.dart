@@ -42,7 +42,6 @@ class _MainPageState extends State<MainPage> {
         ),
         body: ListView(
           children: [Container(
-            color: Constants.mainColor,
             height: 200,
             width: double.infinity,
             child: const PhotoSlider(),
