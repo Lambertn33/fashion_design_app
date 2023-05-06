@@ -1,3 +1,4 @@
+import 'package:fashion_design_app/components/photoslider.dart';
 import 'package:fashion_design_app/helpers/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -5,9 +6,14 @@ void main(List<String> args) {
   runApp(const MainPage());
 }
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,16 +22,33 @@ class MainPage extends StatelessWidget {
           primarySwatch: Constants.mainAppBarColor,
           fontFamily: Constants.mainAppFont),
       home: Scaffold(
-          appBar: AppBar(
-        backgroundColor: Constants.lightColor,
-        title: Text(
-          Constants.mainAppTitle,
-          style: TextStyle(color: Constants.mainColor),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Constants.lightColor,
+          title: Text(
+            Constants.mainAppTitle,
+            style: TextStyle(
+                color: Constants.mainColor,
+                fontSize: 24,
+                fontWeight: FontWeight.w600),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon:
+                  Icon(size: 30, color: Constants.mainColor, Icons.camera_alt),
+            )
+          ],
         ),
-        actions: [
-          Icon(Icons.camera_enhance, size: 30, color: Constants.mainColor,)
-        ],
-      )),
+        body: ListView(
+          children: [Container(
+            color: Constants.mainColor,
+            height: 200,
+            width: double.infinity,
+            child: const PhotoSlider(),
+          )],
+        )
+      ),
     );
   }
 }
