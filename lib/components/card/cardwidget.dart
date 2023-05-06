@@ -26,8 +26,7 @@ class CardWidget extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(12.0),
               width: double.infinity,
-              height: 450,
-              child: Expanded(
+              child: SingleChildScrollView(
                 child: Column(children: [
                   const CardHeader(),
                   const SizedBox(height: 4,),

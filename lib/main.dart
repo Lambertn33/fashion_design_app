@@ -13,7 +13,21 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    // TODO: implement initState
+    tabController = TabController(length: 4, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    tabController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,7 +54,17 @@ class _MainPageState extends State<MainPage> {
             )
           ],
         ),
-        body: const CardWidget()
+        body: const CardWidget(),
+        bottomNavigationBar: Material(
+          child: TabBar(
+            controller: tabController,
+            tabs: [
+            Tab(icon: Icon(Icons.home, size: 30, color: Constants.mainColor.withOpacity(0.6),),),
+            Tab(icon: Icon(Icons.more, size: 30, color: Constants.mainColor.withOpacity(0.6),),),
+            Tab(icon: Icon(Icons.play_arrow, size: 30, color: Constants.mainColor.withOpacity(0.6),),),
+            Tab(icon: Icon(Icons.navigation, size: 30, color: Constants.mainColor.withOpacity(0.6),),),
+          ]),
+        ),
       ),
     );
   }

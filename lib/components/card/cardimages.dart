@@ -18,7 +18,7 @@ class _CardImagesState extends State<CardImages> {
             Expanded(
               flex: 2,
               child: Container(
-                height: 200,
+                height: 400,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
@@ -35,7 +35,7 @@ class _CardImagesState extends State<CardImages> {
                 child: Column(
                   children: [
                     Container(
-                      height: 100,
+                      height: 200,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
@@ -47,7 +47,7 @@ class _CardImagesState extends State<CardImages> {
                       height: 6,
                     ),
                     Container(
-                      height: 100,
+                      height: 200,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
