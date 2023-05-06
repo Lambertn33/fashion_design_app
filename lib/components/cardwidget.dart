@@ -1,5 +1,6 @@
 import 'package:fashion_design_app/components/cardbody.dart';
 import 'package:fashion_design_app/components/cardheader.dart';
+import 'package:fashion_design_app/components/cardimages.dart';
 import 'package:fashion_design_app/components/photoslider.dart';
 import 'package:fashion_design_app/helpers/constants.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,9 @@ class CardWidget extends StatelessWidget {
                 child: Column(children: [
                   const CardHeader(),
                   const SizedBox(height: 4,),
-                  const CardBody()
+                  const CardBody(),
+                  const SizedBox(height: 4,),
+                  const CardImages(),
                 ]),
               ),
             ),
