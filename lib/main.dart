@@ -1,7 +1,8 @@
+import 'package:fashion_design_app/helpers/constants.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  
+  runApp(const MainPage());
 }
 
 class MainPage extends StatelessWidget {
@@ -10,7 +11,21 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(appBar: AppBar(title: Text('Fashion design'),)),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primarySwatch: Constants.mainAppBarColor,
+          fontFamily: Constants.mainAppFont),
+      home: Scaffold(
+          appBar: AppBar(
+        backgroundColor: Constants.lightColor,
+        title: Text(
+          Constants.mainAppTitle,
+          style: TextStyle(color: Constants.mainColor),
+        ),
+        actions: [
+          Icon(Icons.camera_enhance, size: 30, color: Constants.mainColor,)
+        ],
+      )),
     );
   }
 }
