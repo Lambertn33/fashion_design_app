@@ -1,4 +1,4 @@
-import 'package:fashion_design_app/components/cardwidget.dart';
+import 'package:fashion_design_app/components/card/cardwidget.dart';
 import 'package:fashion_design_app/helpers/constants.dart';
 import 'package:flutter/material.dart';
 
